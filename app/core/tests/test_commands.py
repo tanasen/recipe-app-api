@@ -21,7 +21,8 @@ class CommandTests(SimpleTestCase):
         call_command('wait_for_db')
 
         patched_check.assert_called_once_with(databases=['default'])
-    # noqa: W293      
+    # noqa: W293, W291
+    # noqa: E301      
     @patch('time.sleep')
     def test_wait_for_db_delay(self, patched_sleep, patched_check):
         """Test waiting for database when getting OperationalError."""
